@@ -1,4 +1,5 @@
 ﻿using InfoTrackScraper.Interfaces;
+using InfoTrackScraper.Services;
 using Moq;
 
 public class GetSearchPositionsTests
