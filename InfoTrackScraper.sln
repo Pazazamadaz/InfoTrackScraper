@@ -5,7 +5,7 @@ VisualStudioVersion = 17.13.35828.75 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfoTrackScraper", "InfoTrackScraper\InfoTrackScraper.csproj", "{ED374F09-6B62-4EDF-AC1D-387A6C05CB50}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject1", "TestProject1\TestProject1.csproj", "{AFDB611D-1500-4395-B566-021DF1C601F6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfoTrackScraperTests", "TestProject1\InfoTrackScraperTests.csproj", "{AFDB611D-1500-4395-B566-021DF1C601F6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
