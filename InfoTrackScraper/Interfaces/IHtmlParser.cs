@@ -2,5 +2,6 @@
 {
     public interface IHtmlParser
     {
+        IReadOnlyList<int> ExtractPositions(string html, string targetUrl);
     }
 }
