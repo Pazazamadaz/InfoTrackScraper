@@ -27,4 +27,10 @@
     <Folder Include="Mocks\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Mocks\GoogleResultsForLandRegistrySearches.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

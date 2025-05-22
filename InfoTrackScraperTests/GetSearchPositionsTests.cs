@@ -8,14 +8,14 @@ public class GetSearchPositionsTests
     public async Task Returns_positions_when_target_url_is_found()
     {
         // Arrange
-        var fakeHtml = "<html>some google html</html>";
-        var expectedPositions = new List<int> { 1, 5 };
+        var html = LoadHtmlFromFile("GoogleResultsForLandRegistrySearches.html");
+        var expectedPositions = new List<int> { 11, 65 };
 
         var googleClient = new Mock<IGoogleClient>();
-        googleClient.Setup(g => g.FetchHtmlAsync("search term")).ReturnsAsync(fakeHtml);
+        googleClient.Setup(g => g.FetchHtmlAsync("search term")).ReturnsAsync(html);
 
         var parser = new Mock<IHtmlParser>();
-        parser.Setup(p => p.ExtractPositions(fakeHtml, "example.com")).Returns(expectedPositions);
+        parser.Setup(p => p.ExtractPositions(html, "example.com")).Returns(expectedPositions);
 
         var command = new GetSearchPositions(googleClient.Object, parser.Object, "search term", "example.com");
 
@@ -42,5 +42,11 @@ public class GetSearchPositionsTests
         var result = await command.ExecuteAsync();
 
         Assert.Equal(new[] { 0 }, result);
+    }
+
+    private static string LoadHtmlFromFile(string filename)
+    {
+        var path = Path.Combine(AppContext.BaseDirectory, "Mocks", filename);
+        return File.ReadAllText(path);
     }
 }
